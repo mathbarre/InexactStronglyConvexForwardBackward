@@ -10,7 +10,7 @@ Code associated with the work TODO ['reference'](https://arxiv.org/)
 
 ### Organization
 
-- The proofs folder contains [mathematica](https://www.wolfram.com/mathematica/) notebooks to verify the proofs of Theorem 3.1 and 5.1 from the paper.
+- The proofs folder contains [mathematica](https://www.wolfram.com/mathematica/) notebooks to help verify the proofs of Theorem 3.1 and 5.1 from the paper.
 - The ISCFB folder contains the python code to reproduce experiments appearing in the paper.
 
 ### Running the experiments
