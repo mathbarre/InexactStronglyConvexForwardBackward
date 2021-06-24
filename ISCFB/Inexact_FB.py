@@ -7,7 +7,7 @@ def inexact_fb(X0, f, g, gradf, proxg, L, m, sigma, zeta, xi,
                freq=10):
 
     r"""Inexact accelerated Forward Backward method for solving
-        
+
         minimize f(x)+ g(x)
 
         Parameters
