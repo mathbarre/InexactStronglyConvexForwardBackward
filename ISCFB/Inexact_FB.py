@@ -6,6 +6,60 @@ def inexact_fb(X0, f, g, gradf, proxg, L, m, sigma, zeta, xi,
                maxiter_tot=1000, maxiter_inner=1000, backtrack=1, verbose=1,
                freq=10):
 
+    r"""Inexact accelerated Forward Backward method for solving
+        
+        minimize f(x)+ g(x)
+
+        Parameters
+        ----------
+        X0 : ndarray
+            Initial guess.
+        f : function, ndarray -> float
+            Smooth part of the objective function.
+        g : function, ndarray -> float
+            Nonsmooth part of the objective function.
+        gradf : function, ndarray -> ndarray
+            Gradient of the smooth part f.
+        proxg : function,
+                (ndarray, ndarray, float, integer, float, float, float, float )
+                -> (ndarray, ndarray, integer, float)
+            Function that compute the inexact proximal operator of g.
+        L : float
+            Initial guess on the smoothness constant of f.
+            If backtrack = 1, it can be a "bad" guess.
+        m : float
+            Value of the strong convexity parameter of g used in the algorithm.
+        sigma : float
+            Parameter between 0 and 1 that controls inexactness of
+            prox computations relatively to the distance between
+            consecutive iterates.
+        zeta : float
+            Parameter between 0 and 1 that controls inexactness of
+            prox computations relatively to the subgradient norm of
+            current iterate.
+        xi : function, integer -> float
+             Controls inexactness of prox computations in absolute value.
+        maxiter_tot : integer, optional (default=1000)
+            Maximal number of iterations (inner + outter).
+        maxiter_inner : integer, optional (default=1000)
+            Maximal number of inner iteration when calling proxg.
+        backtrack: bool or integer, optional (default=1)
+            If True or 1, use a backtracking lineseach strategy
+            for the smoothness constant L.
+        verbose : bool or integer, optional
+            Amount of verbosity. 0/False is silent.
+        freq : integer, optional (default=10)
+            If verbose is True or 1, print infos every freq outter iterations.
+        Returns
+        -------
+        X: ndarray
+            Approximate solution of the minimization problem.
+        infos : ndarray, shape (_, 3)
+            At each outer iterations, stores function values,
+            precision reached in proxg and number of inner iterations of
+            proxg.
+        """
+
     X = X0.copy()
     Z = X0.copy()
     fx = f(X)
@@ -32,7 +86,7 @@ def inexact_fb(X0, f, g, gradf, proxg, L, m, sigma, zeta, xi,
         gx = g(X)
         infos = np.vstack([infos, np.array([fx+gx, proxiter, proxgap])])
         if verbose and (k % freq == 0):
-            print("k = %i, proxIters = %i, proxGap = %e, f = %e, L = %e" %
+            print("k = %i, proxIters = %i, proxGap = %e, f+g = %e, L = %e" %
                   (k, proxiter, proxgap, fx+gx, L))
 
         if backtrack:
@@ -64,7 +118,7 @@ def inexact_fb(X0, f, g, gradf, proxg, L, m, sigma, zeta, xi,
                                    np.array([fx+gx, proxiter, proxgap])])
                 if verbose and (k % freq == 0):
                     print("k = %i, proxIters = %i, "
-                          "proxGap = %e, f = %e, L = %e"
+                          "proxGap = %e, f+g = %e, L = %e"
                           % (k, proxiter, proxgap, fx+gx, L))
                 if np.sum(infos[:, 1]) >= maxiter_tot:
                     return (X, infos)
