@@ -4,7 +4,7 @@ from math import sqrt
 
 def inexact_fb(X0, f, g, gradf, proxg, L, m, sigma, zeta, xi,
                maxiter_tot=1000, maxiter_inner=1000, backtrack=1, verbose=1,
-               freq=10):
+               freq=10, tol_backtrack=0):
 
     r"""Inexact accelerated Forward Backward method for solving
 
@@ -50,6 +50,8 @@ def inexact_fb(X0, f, g, gradf, proxg, L, m, sigma, zeta, xi,
             Amount of verbosity. 0/False is silent.
         freq : integer, optional (default=10)
             If verbose is True or 1, print infos every freq outter iterations.
+        tol_backtrack: float, optional (default=0)
+            tolerance in the inequalities used in backtracking linesearch
         Returns
         -------
         X: ndarray
@@ -92,7 +94,8 @@ def inexact_fb(X0, f, g, gradf, proxg, L, m, sigma, zeta, xi,
         if backtrack:
             fy = f(Y)
             gradf_x = gradf(X)
-            while (fy < fx + gradf_x.flatten().dot((Y-X).flatten())
+            while (tol_backtrack < -fy + fx
+                   + gradf_x.flatten().dot((Y-X).flatten())
                    + 1/2/L*np.sum(((gradf_x-gradf_y).flatten())**2)):
                 if verbose:
                     print("Lipschitz estimate too small, increasing...")

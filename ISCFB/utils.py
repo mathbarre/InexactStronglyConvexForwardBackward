@@ -68,13 +68,19 @@ def ST_vec(x, u):
     return np.sign(x) * np.maximum(0., np.abs(x) - u)
 
 
-def strFistaLasso(X, y, x0, L, m, maxiter, l_reg):
+def FistaLasso(X, y, x0, L, maxiter, l_reg, m=0):
     x = x0.copy()
     z = x0.copy()
-    beta = (1-sqrt(m/(L+m)))/(1+sqrt(m/(L+m)))
+    t = 1
+    if m > 0:
+        beta = (1-sqrt(m/(L+m)))/(1+sqrt(m/(L+m)))
     res = np.array([0.5*np.sum((X@x0-y)**2) + l_reg*np.sum(abs(x0))
                     + m/2*np.sum(x0**2)])
     for k in range(maxiter):
+        t_ = (1+sqrt(1+4*t**2))/2
+        if m == 0:
+            beta = (t-1)/t_
+        t = t_
         x_ = ST_vec(z - 1/(L+m)*(X.T@(X@z-y)+m*z), l_reg/(L+m))
         z = x_ + beta*(x_-x)
         x = x_.copy()
