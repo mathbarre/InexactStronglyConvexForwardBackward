@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     36269,       1014]
-NotebookOptionsPosition[     34066,        974]
-NotebookOutlinePosition[     34463,        990]
-CellTagsIndexPosition[     34420,        987]
+NotebookDataLength[     36315,       1014]
+NotebookOptionsPosition[     34112,        974]
+NotebookOutlinePosition[     34509,        990]
+CellTagsIndexPosition[     34466,        987]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -556,14 +556,14 @@ Cell[BoxData[
    RowBox[{
    "We", " ", "construct", " ", "the", " ", "weighted", " ", "sum", " ", "of",
      " ", "inequalities", " ", "with", " ", "the", " ", "right", " ", 
-    "values", " ", "for", " ", "the", " ", "multiplicator", " ", "\[Nu]_i"}], 
+    "values", " ", "for", " ", "the", " ", "multipliers", " ", "\[Nu]_i"}], 
    ",", " ", 
    RowBox[{
     RowBox[{"note", " ", "that", " ", "WeigthedSum"}], " ", "\[LessEqual]", 
     " ", "0"}]}], " ", "*)"}]], "Input",
  CellChangeTimes->{{3.833878639240193*^9, 3.833878681797948*^9}, {
-  3.8338787894166183`*^9, 
-  3.833878801513875*^9}},ExpressionUUID->"27a53740-f383-49b9-b097-\
+  3.8338787894166183`*^9, 3.833878801513875*^9}, {3.833879038780815*^9, 
+  3.8338790390967617`*^9}},ExpressionUUID->"27a53740-f383-49b9-b097-\
 958d3695ec1a"],
 
 Cell[BoxData[
@@ -998,22 +998,22 @@ Cell[CellGroupData[{
 Cell[16039, 468, 209, 4, 30, "Input",ExpressionUUID->"d7bf476d-3a88-47e7-948d-acd39117836d"],
 Cell[16251, 474, 2702, 75, 53, "Output",ExpressionUUID->"9e885f66-c9b8-41db-b00e-1d1cec8099f4"]
 }, Open  ]],
-Cell[18968, 552, 607, 14, 30, "Input",ExpressionUUID->"27a53740-f383-49b9-b097-958d3695ec1a"],
-Cell[19578, 568, 2125, 50, 50, "Input",ExpressionUUID->"b297b688-8376-4f50-a755-0d0035a63e44"],
-Cell[21706, 620, 152, 3, 30, "Input",ExpressionUUID->"f2a6c80e-460f-401f-b231-398e96df445d"],
-Cell[21861, 625, 1492, 43, 50, "Input",ExpressionUUID->"c549c14b-6a9b-4c39-8780-2db939669c05"],
-Cell[23356, 670, 1431, 41, 55, "Input",ExpressionUUID->"2bbdd50f-574a-4cdb-8161-11eeaf475344"],
-Cell[24790, 713, 2696, 73, 53, "Input",ExpressionUUID->"6fd2387c-538e-4968-9e59-1bcee5a0e060"],
-Cell[27489, 788, 1848, 54, 50, "Input",ExpressionUUID->"15700ef3-c1bf-474d-b032-2eac933994e8"],
-Cell[29340, 844, 658, 17, 52, "Input",ExpressionUUID->"d8a2f631-526b-4568-a96d-4605ab98f2a0"],
+Cell[18968, 552, 653, 14, 30, "Input",ExpressionUUID->"27a53740-f383-49b9-b097-958d3695ec1a"],
+Cell[19624, 568, 2125, 50, 50, "Input",ExpressionUUID->"b297b688-8376-4f50-a755-0d0035a63e44"],
+Cell[21752, 620, 152, 3, 30, "Input",ExpressionUUID->"f2a6c80e-460f-401f-b231-398e96df445d"],
+Cell[21907, 625, 1492, 43, 50, "Input",ExpressionUUID->"c549c14b-6a9b-4c39-8780-2db939669c05"],
+Cell[23402, 670, 1431, 41, 55, "Input",ExpressionUUID->"2bbdd50f-574a-4cdb-8161-11eeaf475344"],
+Cell[24836, 713, 2696, 73, 53, "Input",ExpressionUUID->"6fd2387c-538e-4968-9e59-1bcee5a0e060"],
+Cell[27535, 788, 1848, 54, 50, "Input",ExpressionUUID->"15700ef3-c1bf-474d-b032-2eac933994e8"],
+Cell[29386, 844, 658, 17, 52, "Input",ExpressionUUID->"d8a2f631-526b-4568-a96d-4605ab98f2a0"],
 Cell[CellGroupData[{
-Cell[30023, 865, 363, 8, 30, "Input",ExpressionUUID->"271fc321-c551-4455-b6a2-42f2229a31db"],
-Cell[30389, 875, 541, 9, 34, "Output",ExpressionUUID->"0154c110-f0c0-43b0-962e-dec0f3591178"]
+Cell[30069, 865, 363, 8, 30, "Input",ExpressionUUID->"271fc321-c551-4455-b6a2-42f2229a31db"],
+Cell[30435, 875, 541, 9, 34, "Output",ExpressionUUID->"0154c110-f0c0-43b0-962e-dec0f3591178"]
 }, Open  ]],
-Cell[30945, 887, 408, 10, 52, "Input",ExpressionUUID->"cad346d3-4525-451e-80f2-af5d2a9a6fa8"],
+Cell[30991, 887, 408, 10, 52, "Input",ExpressionUUID->"cad346d3-4525-451e-80f2-af5d2a9a6fa8"],
 Cell[CellGroupData[{
-Cell[31378, 901, 2185, 59, 69, "Input",ExpressionUUID->"49ce857d-a433-4071-b466-9ed97de37d1a"],
-Cell[33566, 962, 472, 8, 34, "Output",ExpressionUUID->"7cc6aa49-c0ee-46af-8569-8e66c0add968"]
+Cell[31424, 901, 2185, 59, 69, "Input",ExpressionUUID->"49ce857d-a433-4071-b466-9ed97de37d1a"],
+Cell[33612, 962, 472, 8, 34, "Output",ExpressionUUID->"7cc6aa49-c0ee-46af-8569-8e66c0add968"]
 }, Open  ]]
 }, Open  ]]
 }
