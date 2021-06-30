@@ -1,6 +1,8 @@
 # Inexact Forward-Backward Algorithms for Strongly Convex Objectives
 
-Code associated with the work TODO ['reference'](https://arxiv.org/)
+Code associated with the work ['reference'](https://arxiv.org/abs/2106.15536).
+
+> [1] M. Barré, A. B. Taylor and F. Bach, "A note on approximate accelerated forward-backward methods with absolute and relative errors, and possibly strongly convex objectives" arXiv:2106.15536, 2021.
 
 ## Authors
 
